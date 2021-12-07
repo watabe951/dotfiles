@@ -108,3 +108,4 @@ function poe() {poetry run poe $args}
 Set-Alias gti git
 Set-Alias which where.exe
 # Invoke-Expression (&starship init powershell)
+$env:XDG_CONFIG_HOME = "$HOME\.config"

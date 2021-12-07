@@ -43,15 +43,15 @@ if dein#load_state($HOME . '/.config/nvim/dein')
   " dein begin
   call dein#begin($HOME . '/.config/nvim/dein')
 
- " プラグインリストを収めた TOML ファイル
- " 予め TOML ファイル（後述）を用意しておく
- let s:toml_dir  = $HOME . '/.config/nvim/dein/toml' 
- let s:toml      = s:toml_dir . '/dein.toml'
- let s:lazy_toml = s:toml_dir . '/dein_lazy.toml'
+  " プラグインリストを収めた TOML ファイル
+  " 予め TOML ファイル（後述）を用意しておく
+  let s:toml_dir  = $HOME . '/.config/nvim/dein/toml'
+  let s:toml      = s:toml_dir . '/dein.toml'
+  let s:lazy_toml = s:toml_dir . '/dein_lazy.toml'
 
- " TOML を読み込み、キャッシュしておく
- call dein#load_toml(s:toml,      {'lazy': 0})
- call dein#load_toml(s:lazy_toml, {'lazy': 1})
+  " TOML を読み込み、キャッシュしておく
+  call dein#load_toml(s:toml,      {'lazy': 0})
+  call dein#load_toml(s:lazy_toml, {'lazy': 1})
 
 
   " Required:
