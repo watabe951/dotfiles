@@ -1,0 +1,1 @@
+gsudo ln -T -s -f $HOME/dotfiles/keyhac/config.py $env:APPDATA/Keyhac/config.py
