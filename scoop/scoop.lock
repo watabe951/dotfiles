@@ -1,11 +1,11 @@
-7zip (v:19.00) [main]
-BusyBox (v:4487-gd239d2d52) [main]
-grep (v:2.5.4) [main]
-gsudo (v:1.0.2) [main]
-nano (v:5.9-10) [main]
-neovim (v:0.5.1) [main]
-nu (v:0.40.0) [main]
-nyagos (v:4.4.10_3) [main]
-starship (v:1.0.0) [main]
-vimtutor (v:0.2018.07.25) [main]
-winfetch (v:2.3.0) [main]
+main/7zip
+main/BusyBox
+main/grep
+main/gsudo
+main/nano
+main/neovim
+main/nu
+main/nyagos
+main/starship
+main/vimtutor
+main/winfetch
