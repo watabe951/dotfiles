@@ -1,57 +1,141 @@
 {
-    "diffEditor.renderSideBySide": false, // Git の差分を行内に表示
-    "editor.colorDecorators": false, // カラーデコレーターを非表示
-    "editor.formatOnPaste": true, // ペースト時に自動でフォーマット
-    "editor.formatOnSave": true, // ファイル保存時に自動でフォーマット
-    "editor.formatOnType": true, // 入力した行を自動でフォーマット
-    "editor.minimap.renderCharacters": false, // ミニマップの表示文字をブロックに変更
-    "editor.minimap.showSlider": "always", // 表示領域をミニマップで常にハイライト
-    "editor.multiCursorModifier": "ctrlCmd", // マウスでの複数選択時の修飾キーを変更
-    "editor.renderControlCharacters": true, // 制御文字を表示
-    "editor.renderLineHighlight": "all", // 選択行を行番号含めすべてハイライト
-    "editor.renderWhitespace": "all", // 半角スペースを常に表示
-    "editor.snippetSuggestions": "top", // Emmet などのスニペット候補を優先して表示
-    "editor.tabSize": 4, // タブのサイズ変更
-    "editor.wordWrap": "on", // エディターの幅で折り返し
-    "emmet.showSuggestionsAsSnippets": true, // Emmet の候補を表示
-    "emmet.triggerExpansionOnTab": true, // TAB キーで Emmet を展開できるようにする
-    "emmet.variables": { // Emmet で展開される HTML の言語を変更
-        "lang": "ja"
+    // python
+    "python.languageServer": "Pylance",
+    
+    // ssh
+    "remote.SSH.remotePlatform": {
+        "yuuya_desktop": "linux",
+        "dynabook": "linux",
+        "ec2-35-162-221-193.us-west-2.compute.amazonaws.com": "linux",
+        "aws_server": "linux"
     },
-    //"explorer.confirmDelete": false, // ファイル削除時の確認を表示しない
-    "files.associations": { // ファイルと言語の関連付けを変更
-        ".*lintrc": "json"
+    "remote.SSH.connectTimeout": 2000,
+    "remote.SSH.useLocalServer": false,
+    
+    // javascript
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "files.exclude": { // エクスプローラーから非表示にするファイル
-        "**/*.map": true,
-        "**/node_modules": true
+
+    // git
+    "git.autofetch": true,
+    // markdown
+    "markdown.extension.print.includeVscodeStylesheets": false,
+    //etc
+    "workbench.colorTheme": "Visual Studio 2019 Dark",
+    "explorer.confirmDragAndDrop": false,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
     },
-    "files.insertFinalNewline": true, // ファイルの保存時に末尾を改行
-    "files.trimFinalNewlines": true, // ファイルの保存時に最終行以降をトリミング
-    "files.trimTrailingWhitespace": true, // ファイルの保存時に行末の空白をトリミング
-    "[markdown]": {
-        "files.trimTrailingWhitespace": false // Markdown のファイルは行末の空白をトリミングしない
-    },
-    "html.format.contentUnformatted": "pre, code, textarea, title, h1, h2, h3, h4, h5, h6, p", // タグ内の記述はフォーマットしない
-    "html.format.extraLiners": "", // head, body, /html タグの前に改行を入れない
-    "html.format.unformatted": null, // フレージング・コンテンツ（旧インライン要素のようなタグ）はフォーマットしない
-    "html.format.wrapLineLength": 0, // 行の文字数制限を無くし自動で改行させない
-    "search.exclude": { // 検索対象外にするファイル設定（ files.exclude のファイルも含む）
-        "**/tmp": true
-    },
-    "window.openFoldersInNewWindow": "on", // 新規ワークスペースを別ウインドウで開く
-    "window.title": "${activeEditorMedium}${separator}${rootName}", // ウインドウ上部に表示する文字列の設定
-    "workbench.editor.labelFormat": "short", // タブに表示する文字列の設定
-    "workbench.editor.tabSizing": "shrink", // タブの表示設定
-    "workbench.startupEditor": "none", // Welcome Page を表示しない
-    "files.autoGuessEncoding": true,
-    "explorer.confirmDragAndDrop": false, // ファイルの文字コードを自動で判定する
-    "terminal.integrated.shell.windows": "C:\\Windows\\system32\\cmd.exe",
-    "terminal.integrated.shellArgs.windows": [
-        "/K",
-        "C:\\Users\\yuuya\\Anaconda3\\Scripts\\activate.bat",
-        "C:\\Users\\yuuya\\Anaconda3"
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.accessibilitySupport": "off",
+    "latex-workshop.view.pdf.viewer": "external",
+    "latex-workshop.view.pdf.external.viewer.command": 
+            "C:\\Users\\yuuya\\AppData\\Local\\SumatraPDF\\SumatraPDF.exe",
+    "latex-workshop.view.pdf.external.viewer.args": [
+            "-reuse-instance",
+            "%PDF%"
     ],
-    "window.zoomLevel": 1,
-    "explorer.confirmDelete": false
+    "latex-workshop.view.pdf.external.synctex.command": 
+            "C:\\Users\\yuuya\\AppData\\Local\\SumatraPDF\\SumatraPDF.exe",
+    "latex-workshop.view.pdf.external.synctex.args": [
+            "-reuse-instance",
+            "-forward-search",
+            "%TEX%",
+            "%LINE%",
+            "%PDF%"
+    ],
+    
+    // integrated terminal
+    "terminal.integrated.confirmOnExit": "hasChildProcesses",
+    
+    "terminal.integrated.profiles.windows": {
+        "Anaconda Prompt (miniconda3)": {
+            "path": "C:\\Windows\\System32\\cmd.exe",
+            "args": [
+                "/K",
+                "C:\\Users\\yuuya\\miniconda3\\Scripts\\activate.bat",
+                "C:\\Users\\yuuya\\miniconda3"
+            ]
+        },
+        "Anaconda Powershell Prompt (miniconda3)": {
+            "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+            "args": [
+                "-ExecutionPolicy",
+                "ByPass",
+                "-NoExit",
+                "-Command",
+                "& 'C:\\Users\\yuuya\\miniconda3\\shell\\condabin\\conda-hook.ps1' ; conda activate 'C:\\Users\\yuuya\\miniconda3' ; Import-Module PSReadLine"
+            ]
+        },
+        "Cmder": {
+            "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+            "args": [
+                "-ExecutionPolicy",
+                "Bypass",
+                "-NoLogo",
+                "-NoExit",
+                "-Command",
+                ". 'C:\\cmder\\vendor\\profile.ps1'"]
+          },
+        "pwsh": {
+            "path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+            "args": [
+                "-ExecutionPolicy",
+                "Bypass",
+                "-NoLogo",
+                "-NoExit",
+                // "-Command",
+                // ". 'C:\\cmder\\vendor\\profile.ps1'"
+            ]
+        },
+        "nushell": {
+            "path": "C:\\Users\\yuuya\\scoop\\shims\\nu.exe",
+            // "args": [
+            //     "-ExecutionPolicy",
+            //     "Bypass",
+            //     "-NoLogo",
+            //     "-NoExit",
+            //     // "-Command",
+            //     // ". 'C:\\cmder\\vendor\\profile.ps1'"
+            // ]
+          }
+    },
+    
+    "terminal.integrated.defaultProfile.windows": "pwsh",
+    // "terminal.integrated.fontFamily": "'3270Medium NF Medium'",//"'FiraCode Nerd Font', monospace"
+    // "terminal.integrated.fontSize": 16,
+
+    
+    // "terminal.integrated.shell.windows":"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    // "terminal.integrated.shellArgs.windows": [
+    //     "-ExecutionPolicy",
+    //     "ByPass",
+    //     "-NoExit",
+    //     "-Command",
+    //     "& 'C:\\Users\\yuuya\\miniconda3\\shell\\condabin\\conda-hook.ps1' ; conda activate 'C:\\Users\\yuuya\\miniconda3' ; Import-Module PSReadLine"
+    // ]
+
+    // "python.terminal.activateEnvironment": true,
+    // "update.mode": "none",
+    "settingsSync.ignoredSettings": [
+        "terminal.integrated.profiles.windows",
+        "terminal.integrated.defaultProfile.windows"
+    ],
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "powershell.powerShellDefaultVersion": "Windows PowerShell (x86)",
+    "git-graph.customBranchGlobPatterns": [
+        {
+            "name": "Feature",
+            "glob": "heads/feature/*"
+        }
+    ]
 }
