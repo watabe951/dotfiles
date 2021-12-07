@@ -1,0 +1,78 @@
+// 既定値を上書きするには、このファイル内にキー バインドを挿入します
+[
+  { "key": "ctrl+n", "command": "explorer.newFile" },
+  {
+    "key": "ctrl+shift+n",
+    "command": "explorer.newFolder"
+  },
+  {
+    "key": "ctrl+f4",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus"
+},
+{
+    "key": "ctrl+down ctrl+down",
+    "command": "workbench.action.terminal.focusTabs",
+    // "when": "terminalFocus && terminalProcessSupported || terminalProcessSupported && terminalTabsFocus"
+},
+{
+    "key": "ctrl+left ctrl+left",
+    "command": "workbench.action.focusSideBar"
+},
+{
+    "key": "ctrl+0",
+    "command": "-workbench.action.focusSideBar"
+},
+{
+    "key": "ctrl+up ctrl+up",
+    "command": "workbench.action.focusFirstEditorGroup"
+},
+{
+    "key": "ctrl+1",
+    "command": "-workbench.action.focusFirstEditorGroup"
+},
+{
+    "key": "ctrl+alt+pagedown",
+    "command": "workbench.action.focusRightGroup"
+},
+{
+    "key": "ctrl+k ctrl+right",
+    "command": "-workbench.action.focusRightGroup"
+},
+{
+    "key": "ctrl+alt+pageup",
+    "command": "workbench.action.focusLeftGroup"
+},
+{
+    "key": "ctrl+k ctrl+left",
+    "command": "-workbench.action.focusLeftGroup"
+},
+{
+    "key": "ctrl+shift+down",
+    "command": "workbench.action.terminal.scrollDown",
+    "when": "terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
+},
+{
+    "key": "ctrl+alt+pagedown",
+    "command": "-workbench.action.terminal.scrollDown",
+    "when": "terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
+},
+{
+    "key": "ctrl+shift+up",
+    "command": "workbench.action.terminal.scrollUp",
+    "when": "terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
+},
+{
+    "key": "ctrl+alt+pageup",
+    "command": "-workbench.action.terminal.scrollUp",
+    "when": "terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
+},
+{
+    "key": "ctrl+g ctrl+c",
+    "command": "git.commit"
+},
+{
+    "key": "ctrl+oem_1",
+    "command": "findThenJump.initiate"
+},
+]
