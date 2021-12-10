@@ -3,7 +3,7 @@
         pager = git-split-diffs --color=16m | LESSCHARSET=utf-8 less -RFX
 
 [alias]
-    tree = log --graph --pretty=format:"%x09%C(auto) %h %Cgreen %ar %Creset%x09by'%C(cyan ul)%an%Creset' %x09%C(auto)%s %d"
+    tree = log --graph --pretty=format:'%x09%C(auto)  %d %h %Cgreen %ar %Creset%x09by"%C(cyan ul)%an%Creset" %x09%C(auto)%s %d'
 
 [user]
     name = YuuyaWatabe
