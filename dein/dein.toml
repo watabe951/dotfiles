@@ -3,11 +3,11 @@
 repo = 'Shougo/dein.vim'
 
 # neosnippet----------------
-[[plugins]]
-repo = 'Shougo/neosnippet.vim'
+#[[plugins]]
+#repo = 'Shougo/neosnippet.vim' 
 
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
+#[[plugins]]
+#repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
 repo = 'neoclide/coc.nvim'
