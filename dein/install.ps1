@@ -7,6 +7,6 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 Remove-Item ./installer.ps1
 
 # set symlinks
-mkdir -p C:\Users\yuuya/.config/nvim/dein/toml
+mkdir -p $HOME/.config/nvim/dein/toml
 gsudo ln -T -s -f $HOME/dotfiles/dein/dein.toml $HOME/.config/nvim/dein/toml/dein.toml
 gsudo ln -T -s -f $HOME/dotfiles/dein/dein_lazy.toml $HOME/.config/nvim/dein/toml/dein_lazy.toml
