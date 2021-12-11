@@ -1,1 +1,0 @@
-C:/Users/yuuya/.config/nvim/init.vim
