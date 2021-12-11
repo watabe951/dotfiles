@@ -1,6 +1,6 @@
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 
-
+# add . to PATH
 if(-not $env:path.Split(';').Contains('.')){
     $env:path += ";."
 }
@@ -17,7 +17,7 @@ Set-Alias -Name:"sudo" -Value:"Run-AsAdmin" -Description:"Start the certain proc
 
 
 # ついでに、初期位置を変更しておく。
-# Set-Location "C:\Users\{UserName}\Documents\GitHub"
+# Set-Location "C:\Users\{UserName}\"
 
 
 function prompt {
@@ -109,3 +109,8 @@ Set-Alias gti git
 Set-Alias which where.exe
 # Invoke-Expression (&starship init powershell)
 $env:XDG_CONFIG_HOME = "$HOME\.config"
+
+# predict
+Set-PSReadLineOption -PredictionSource History
+# disable bell
+Set-PSReadlineOption -BellStyle None
