@@ -7,6 +7,9 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 Remove-Item ./installer.ps1
 
 # set symlinks
+if (-Not( Test-Path $HOME/.config/nvim/dein/toml)){
+	mkdir -p $HOME/.config/nvim/dein/toml
+}
 mkdir -p $HOME/.config/nvim/dein/toml
-gsudo ln -T -s -f $HOME/dotfiles/dein/dein.toml $HOME/.config/nvim/dein/toml/dein.toml
-gsudo ln -T -s -f $HOME/dotfiles/dein/dein_lazy.toml $HOME/.config/nvim/dein/toml/dein_lazy.toml
+gsudo New-Item -Value $HOME/dotfiles/dein/dein.toml -Path $HOME/.config/nvim/dein/toml -Name dein.toml -ItemType SymbolicLink -Force
+gsudo New-Item -Value $HOME/dotfiles/dein/dein_lazy.toml -Path $HOME/.config/nvim/dein/toml -Name dein_lazy.toml -ItemType SymbolicLink -Force
