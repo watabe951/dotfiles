@@ -86,16 +86,22 @@ def configure(keymap):
     keymap_global[ "U-U0-Slash" ] = keymap.MouseButtonUpCommand('left')
 
     for modifier in ("", "S-", "C-", "A-", "C-S-", "C-A-", "S-A-", "C-A-S-"):
+        
+
         # 上下左右
-        keymap_global[modifier + "U0-H"] = modifier + "Left"
-        keymap_global[modifier + "U0-J"] = modifier + "Down"
-        keymap_global[modifier + "U0-K"] = modifier + "Up"
+        keymap_global[modifier + "U0-U"] = modifier + "Back"
+        keymap_global[modifier + "U0-O"] = modifier + "Enter"
+        keymap_global[modifier + "U0-H"] = modifier + "Home"
+
+        keymap_global[modifier + "U0-J"] = modifier + "Left"
+        keymap_global[modifier + "U0-K"] = modifier + "Down"
         keymap_global[modifier + "U0-L"] = modifier + "Right"
         
-        keymap_global[modifier + "U0-Y"] = modifier + "Home"
-        keymap_global[modifier + "U0-U"] = modifier + "PageDown"
-        keymap_global[modifier + "U0-I"] = modifier + "PageUp"
-        keymap_global[modifier + "U0-O"] = modifier + "End"
+        # keymap_global[modifier + "U0-Y"] = modifier + "Home"
+        keymap_global[modifier + "U0-N"] = modifier + "PageDown"
+        keymap_global[modifier + "U0-I"] = modifier + "Up"
+        keymap_global[modifier + "U0-M"] = modifier + "PageUp"
+        keymap_global[modifier + "U0-Plus"] = modifier + "End"
         # Home / End
         keymap_global[modifier + "U0-F"] = modifier + "Enter"
         keymap_global[modifier + "U0-D"] = modifier + "Back"
