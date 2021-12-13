@@ -6,6 +6,6 @@ curl.exe http://satoshi3.sakura.ne.jp/f_soft/dw_win.files/ChgKey15.LZH --output 
 
 # haichi
 Move-Item -Force ./chgkey $env:APPDATA/chgkey
-gsudo ln -f -T -s $HOME/dotfiles/ChangeKey/chgkey.ini $env:APPDATA/chgkey/chgkey.ini
+gsudo New-Item -Force -Value $HOME/dotfiles/ChangeKey/chgkey.ini -Path $env:APPDATA/chgkey -Name chgkey.ini
 Remove-Item .\chgkey -r
 Remove-Item .\chgkey.lzh
