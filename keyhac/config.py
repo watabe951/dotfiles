@@ -40,7 +40,7 @@ def configure(keymap):
     keymap.defineModifier(235, "User0") # 無変換を U0 修飾キーとして使う
 
     # keymap.replaceKey("ESC", 233)      # 無変換（29）を 235 とする
-    keymap.replaceKey("ESC", "LWin")      # 無変換（29）を 235 とする
+    # keymap.replaceKey("ESC", "LWin")      # 無変換（29）を 235 とする
     # keymap.defineModifier(233, "User2") # 無変換を U0 修飾キーとして使う
 
     # Global keymap which affects any windows
@@ -63,8 +63,8 @@ def configure(keymap):
     # keymap_global["233"] = lambda : shellExecute( None, "C:\\Users\\yuuya\\Desktop\\screencolor\\o.vbs", "", "C:\\Users\\yuuya\\Desktop\\screencolor\\" )
 
     keymap_global["233"] = lambda : shellExecute( None, "C:\\Users\\yuuya\\workspace\\screencolor\\target\\o.exe", "", "" )
-    keymap_global[ "U0-Minus"  ] = "Alt-Left"
-    keymap_global[ "U0-Plus"  ] = "Alt-Right"
+    # keymap_global[ "U0-Minus"  ] = "Alt-Left"
+    # keymap_global[ "U0-Plus"  ] = "Alt-Right"
 
     keymap_global[ "U0-9"  ] = "Ctrl-PageUp"
     keymap_global[ "U0-0"  ] = "Ctrl-PageDown"
@@ -73,7 +73,7 @@ def configure(keymap):
 
         keymap_global[ "U0-"+arrow] = "Win-" + arrow
 
-    keymap_global[ "O-235"] = "ESC"   
+    keymap_global[ "O-235"] = "ESC"
 
     keymap_global[ "U0-OpenBracket"] = keymap.MouseWheelCommand(1.0)
     keymap_global[ "U0-Quote"  ] = keymap.MouseWheelCommand(-1.0)
@@ -85,9 +85,9 @@ def configure(keymap):
     keymap_global[ "D-U0-Slash" ] = keymap.MouseButtonDownCommand('left')
     keymap_global[ "U-U0-Slash" ] = keymap.MouseButtonUpCommand('left')
 
-    for modifier in ("", "S-", "C-", "A-", "C-S-", "C-A-", "S-A-", "C-A-S-"):
-        
-
+    for modifier in ("", "S-", "C-", "A-", "C-S-", "C-A-", "S-A-", "C-A-S-", "W-"):
+        for numeric in [1,2,3,4,5,6,7,8,9,0]:
+            keymap_global[modifier + f"U0-{numeric}"] = modifier + f"F{numeric}"
         # 上下左右
         keymap_global[modifier + "U0-U"] = modifier + "Back"
         keymap_global[modifier + "U0-O"] = modifier + "Enter"
@@ -103,9 +103,10 @@ def configure(keymap):
         keymap_global[modifier + "U0-M"] = modifier + "PageUp"
         keymap_global[modifier + "U0-Plus"] = modifier + "End"
         # Home / End
-        keymap_global[modifier + "U0-F"] = modifier + "Enter"
-        keymap_global[modifier + "U0-D"] = modifier + "Back"
-        keymap_global[modifier + "U0-S"] = modifier + "Delete"
+        keymap_global[modifier + "U0-E"] = modifier + "W-Up"
+        keymap_global[modifier + "U0-S"] = modifier + "W-Left"
+        keymap_global[modifier + "U0-D"] = modifier + "W-Down"
+        keymap_global[modifier + "U0-F"] = modifier + "W-Right"
         keymap_global[modifier + "U0-A"] = modifier + "ESC"
         keymap_global[modifier + "U0-C"] = modifier + "Space"
 
