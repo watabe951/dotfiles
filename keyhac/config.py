@@ -92,6 +92,7 @@ def configure(keymap):
         keymap_global[modifier + "U0-U"] = modifier + "Back"
         keymap_global[modifier + "U0-O"] = modifier + "Enter"
         keymap_global[modifier + "U0-H"] = modifier + "Home"
+        keymap_global[modifier + "U0-P"] = modifier + "Delete"
 
         keymap_global[modifier + "U0-J"] = modifier + "Left"
         keymap_global[modifier + "U0-K"] = modifier + "Down"
