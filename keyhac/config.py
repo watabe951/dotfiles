@@ -48,7 +48,7 @@ def configure(keymap):
     keymap_global = keymap.defineWindowKeymap()
     keymap.replaceKey("Space", "RShift")
     keymap_global["O-RShift"] = "Space"
-    keymap_global[ "O-C-RShift"]  = "A-(25)"
+    # keymap_global[ "O-C-RShift"]  = "A-(25)"
     # keymap_global["O-Shift"] = "Space"
     # keymap.replaceKey("Space", "Shift")
     # keymap.defineModifier("Space", "User2")
@@ -66,8 +66,8 @@ def configure(keymap):
     # keymap_global[ "U0-Minus"  ] = "Alt-Left"
     # keymap_global[ "U0-Plus"  ] = "Alt-Right"
 
-    keymap_global[ "U0-9"  ] = "Ctrl-PageUp"
-    keymap_global[ "U0-0"  ] = "Ctrl-PageDown"
+    # keymap_global[ "U0-9"  ] = "Ctrl-PageUp"
+    # keymap_global[ "U0-0"  ] = "Ctrl-PageDown"
 
     for arrow in ["Left", "Right", "Up", "Down"]:
 
