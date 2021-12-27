@@ -8,3 +8,5 @@
 [user]
     name = Yuuya Watabe
     email = watabe951@gmail.com
+[credential "helperselector"]
+	selected = manager-core
