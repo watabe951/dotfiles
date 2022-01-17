@@ -114,3 +114,5 @@ $env:XDG_CONFIG_HOME = "$HOME\.config"
 Set-PSReadLineOption -PredictionSource History
 # disable bell
 Set-PSReadlineOption -BellStyle None
+
+Remove-Alias ls
