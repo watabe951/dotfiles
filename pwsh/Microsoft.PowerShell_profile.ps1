@@ -116,3 +116,6 @@ Set-PSReadLineOption -PredictionSource History
 Set-PSReadlineOption -BellStyle None
 
 Remove-Alias ls
+# set console output encoding to UTF-8, which result pipe encoding will be interpreted as UTF-8.
+[Console]::OutputEncoding = [System.Text.Encoding]::GetEncoding('utf-8')
+

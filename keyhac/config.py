@@ -34,10 +34,10 @@ def configure(keymap):
 
     # Simple key replacement
     keymap.replaceKey("(29)", 235)      # 無変換（29）を 235 とする
-    keymap.replaceKey("(28)", 235)
-    
+    keymap.replaceKey("(28)", 234)      # 変換 (28) を 235 とする
     keymap.replaceKey("LAlt", 235)      # 無変換（29）を 235 とする
-    keymap.defineModifier(235, "User0") # 無変換を U0 修飾キーとして使う
+    keymap.defineModifier(235, "User0") # 235 を U0 修飾キーとして使う
+    keymap.defineModifier(234, "User0") # 235 を U0 修飾キーとして使う
 
     # keymap.replaceKey("ESC", 233)      # 無変換（29）を 235 とする
     # keymap.replaceKey("ESC", "LWin")      # 無変換（29）を 235 とする
@@ -63,11 +63,6 @@ def configure(keymap):
     # keymap_global["233"] = lambda : shellExecute( None, "C:\\Users\\yuuya\\Desktop\\screencolor\\o.vbs", "", "C:\\Users\\yuuya\\Desktop\\screencolor\\" )
 
     keymap_global["233"] = lambda : shellExecute( None, "C:\\Users\\yuuya\\workspace\\screencolor\\target\\o.exe", "", "" )
-    # keymap_global[ "U0-Minus"  ] = "Alt-Left"
-    # keymap_global[ "U0-Plus"  ] = "Alt-Right"
-
-    # keymap_global[ "U0-9"  ] = "Ctrl-PageUp"
-    # keymap_global[ "U0-0"  ] = "Ctrl-PageDown"
 
     for arrow in ["Left", "Right", "Up", "Down"]:
 
@@ -80,12 +75,15 @@ def configure(keymap):
     
     keymap_global[ "U0-N"  ] = keymap.MouseMoveCommand(-10,0)
     keymap_global[ "U0-M"  ] = keymap.MouseMoveCommand(0,10)
-    keymap_global[ "U0-Comma" ] = keymap.MouseMoveCommand(0,-10)
     keymap_global[ "U0-Period"    ] = keymap.MouseMoveCommand(10,0)
     keymap_global[ "D-U0-Slash" ] = keymap.MouseButtonDownCommand('left')
     keymap_global[ "U-U0-Slash" ] = keymap.MouseButtonUpCommand('left')
 
-    for modifier in ("", "S-", "C-", "A-", "C-S-", "C-A-", "S-A-", "C-A-S-", "W-"):
+    for modifier in ("", "S-", "C-", "A-", "C-S-", "C-A-", "S-A-", "C-A-S-", "W-", "W-C-", "W-S-"):
+        # tab
+        keymap_global[modifier + "U0-Comma" ] = modifier + "TAB"
+        
+        # U0 + numeric {n} = F{n}
         for numeric in [1,2,3,4,5,6,7,8,9,0]:
             keymap_global[modifier + f"U0-{numeric}"] = modifier + f"F{numeric}"
         # 上下左右
@@ -111,7 +109,6 @@ def configure(keymap):
         keymap_global[modifier + "U0-A"] = modifier + "ESC"
         keymap_global[modifier + "U0-C"] = modifier + "Space"
 
-
         # Toy Runner
         keymap_global[modifier + "U0-R"] = modifier + "Alt-Space"
 
@@ -122,16 +119,3 @@ def configure(keymap):
         keymap_global["U-" + modifier + "(241)"] = lambda: None
         keymap_global["D-" + modifier + "(242)"] = lambda: None
         keymap_global["U-" + modifier + "(242)"] = lambda: None
-
-
-        # [B]ackSpace / [D]elete
-        # keymap_global["U0-D"] = "Delete"
-        # keymap_global["U0-B"] = "Back"
-        # keymap_global["C-U0-D"] = "C-Delete"
-        # keymap_global["C-U0-B"] = "C-Back"
-        # keymap_global["S-U0-B"] = "S-Home", "C-X" # 先頭まで切り取り
-        # keymap_global["S-U0-D"] = "S-End", "C-X" # 末尾まで切り取り
-        # keymap_global["C-S-U0-B"] = "Home", "Back", "End" # 前の行と連結
-        # keymap_global["C-S-U0-D"] = "End", "Delete", "End" # 次の行と連結
-
-
