@@ -1,7 +1,7 @@
 import sys
 import os
 import datetime
-
+import re
 import pyauto
 from keyhac import *
 
@@ -45,7 +45,7 @@ def configure(keymap):
 
     # Global keymap which affects any windows
     # SpaceをRShiftにわりあててSandSを実現  
-    keymap_global = keymap.defineWindowKeymap()
+    keymap_global = keymap.defineWindowKeymap(check_func = lambda window : not "mstsc.exe" in window.getProcessName())
     keymap.replaceKey("Space", "RShift")
     keymap_global["O-RShift"] = "Space"
     # keymap_global[ "O-C-RShift"]  = "A-(25)"
@@ -119,3 +119,17 @@ def configure(keymap):
         keymap_global["U-" + modifier + "(241)"] = lambda: None
         keymap_global["D-" + modifier + "(242)"] = lambda: None
         keymap_global["U-" + modifier + "(242)"] = lambda: None
+
+
+        # [B]ackSpace / [D]elete
+        # keymap_global["U0-D"] = "Delete"
+        # keymap_global["U0-B"] = "Back"
+        # keymap_global["C-U0-D"] = "C-Delete"
+        # keymap_global["C-U0-B"] = "C-Back"
+        # keymap_global["S-U0-B"] = "S-Home", "C-X" # 先頭まで切り取り
+        # keymap_global["S-U0-D"] = "S-End", "C-X" # 末尾まで切り取り
+        # keymap_global["C-S-U0-B"] = "Home", "Back", "End" # 前の行と連結
+        # keymap_global["C-S-U0-D"] = "End", "Delete", "End" # 次の行と連結
+
+    # print(keymap_global)
+    # keymap_remote_desktop = keymap.defineWindowKeymap(exe_name="mstsc.exe")
