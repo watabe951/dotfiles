@@ -69,6 +69,7 @@ def configure(keymap):
         keymap_global[ "U0-"+arrow] = "Win-" + arrow
 
     keymap_global[ "O-235"] = "ESC"
+    keymap_global[ "O-234"] = "ESC"
 
     keymap_global[ "U0-OpenBracket"] = keymap.MouseWheelCommand(1.0)
     keymap_global[ "U0-CloseBracket"  ] = keymap.MouseWheelCommand(-1.0)
