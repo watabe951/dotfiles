@@ -71,7 +71,7 @@ def configure(keymap):
     keymap_global[ "O-235"] = "ESC"
 
     keymap_global[ "U0-OpenBracket"] = keymap.MouseWheelCommand(1.0)
-    keymap_global[ "U0-Quote"  ] = keymap.MouseWheelCommand(-1.0)
+    keymap_global[ "U0-CloseBracket"  ] = keymap.MouseWheelCommand(-1.0)
     
     keymap_global[ "U0-N"  ] = keymap.MouseMoveCommand(-10,0)
     keymap_global[ "U0-M"  ] = keymap.MouseMoveCommand(0,10)

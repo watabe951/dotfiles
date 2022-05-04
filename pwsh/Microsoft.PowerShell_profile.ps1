@@ -118,4 +118,16 @@ Set-PSReadlineOption -BellStyle None
 Remove-Alias ls
 # set console output encoding to UTF-8, which result pipe encoding will be interpreted as UTF-8.
 [Console]::OutputEncoding = [System.Text.Encoding]::GetEncoding('utf-8')
+Function show($path){
+    if ( Test-Path  $path/input/options.run.json ){
+        cat.exe  $path/input/options.run.json
+    }else {
+        cat.exe $path/input/options.jsonc
+    }
+    plot $path/output/ValueFunction_log.csv "(td_error ** 2).mean(0)" --ylim 0:100
+}
 
+
+Function showAll($path){
+    ls | grep $path | %{show $_}
+}
